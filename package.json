@@ -1,0 +1,16 @@
+{
+  "name": "vax_card_upload_to_s3",
+  "version": "1.0.0",
+  "description": "Uses textract and rekognition to run basic text and object heuristics on s3 images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.963.0",
+    "lodash": "^4.17.21"
+  }
+}
