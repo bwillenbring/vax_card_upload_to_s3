@@ -1,6 +1,9 @@
 # vax_card_upload_to_s3
 Uses textract and rekognition to run basic text and object heuristics on s3 images.
 
+![term-window](https://user-images.githubusercontent.com/513367/128778090-f9f361ed-fad4-49d4-a32c-6dd36a0cc004.png)
+
+
 ## Prerequisites to use this repo
 - You have an aws account 
 - You have an IAM role with the following:
