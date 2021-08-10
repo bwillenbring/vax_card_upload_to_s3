@@ -265,19 +265,13 @@ async function detectObjects () {
 
 // Call analyzeDocument with an anonymous async IIFE
 ;(async function doTextract () {
-  // Set Document type of S3 bucket object
+  // Copy params from default params and add 1 property
   const params = JSON.parse(JSON.stringify(default_params))
-  // Add this...
   params.FeatureTypes = ['FORMS']
-  // Make the request to analyze the document
-  const request = textract.analyzeDocument(params)
-  // Await the analyzed document reponse
-  const data = await request.promise()
-  // Print out if this is a valid cdc card: true || false
-  let status = await validateCard(data.Blocks)
-  if (status === true) {
-    console.log(`✅`)
-  } else {
-    console.log('🚫')
-  }
+  // Make the request to analyze the document and await the response
+  const data = await (textract.analyzeDocument(params)).promise()
+  // Is it a valid cdc card? true || false
+  let status = await validateCard(data.Blocks) === true ? `✅` : `🚫`
+  // Print it...
+  console.log(status)
 })()
